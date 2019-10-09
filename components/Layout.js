@@ -5,10 +5,15 @@ const Layout = props => {
     <div className="content-wrapper">
       <Head>
         <title>{props.title ? `${props.title} | Cool App` : 'Cool App'}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
       </Head>
 
-      <div className="main-content">{props.children}</div>
+      <div className="container d-flex justify-content-center align-items-center">
+        {props.children}
+      </div>
 
       <style jsx global>{`
         *,
@@ -23,14 +28,11 @@ const Layout = props => {
 
         body {
           margin: 0;
-          font-size: 20px;
           line-height: 1.7;
           font-weight: 400;
-          background: #fff;
-          background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
           color: #353535;
-          font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', 'Fira Sans', Avenir, 'Helvetica Neue',
-            'Lucida Grande', sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI',
+            'Fira Sans', Avenir, 'Helvetica Neue', 'Lucida Grande', sans-serif;
           text-rendering: optimizeLegibility;
           height: 100%;
         }
@@ -61,26 +63,7 @@ const Layout = props => {
         p {
           margin: 0 0 10px;
         }
-
-        .btn {
-          background: #111;
-          padding: 12px 24px;
-          color: #fff;
-          font-size: 18px;
-          border: 0;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-
         /* Layout */
-
-        .content-wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding-top: 150px;
-          margin: 0 30px;
-        }
       `}</style>
     </div>
   );
