@@ -10,8 +10,6 @@ export default class MyApp extends App {
   };
 
   componentDidMount = () => {
-    console.log(Router.router.pathname);
-
     const user = localStorage.getItem('coolapp-user');
     if (user) {
       this.setState({
@@ -20,7 +18,6 @@ export default class MyApp extends App {
 
       Router.push('/');
     } else {
-      console.log(Router.router.pathname !== '/signup');
       if (Router.router.pathname !== '/signup') {
         Router.push('/signin');
       }
